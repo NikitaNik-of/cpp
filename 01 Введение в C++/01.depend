@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1676883418 source:d:\github\ccplus\01 ¬ведение в c++\01\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+
