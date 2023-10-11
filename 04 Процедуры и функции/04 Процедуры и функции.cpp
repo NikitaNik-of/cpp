@@ -96,18 +96,40 @@ void n_31(int p, int vn[], int n) {
     cout << ok << "Модуль вектора = " << ans << endl;
 }
 
-// void n_32(int vn[], int n, int search) {
-//     bool flag = true;
-//     for (int i = 0; i < n; i++)
-//     {
-//         if (a[i] == search)
-//         {
-//             flag = false;
-//             cout << ok << "Элемент найден под индексом: " << i << endl;
-//         }
-//     }
-//     if (flag) cout << warn << "Элемент не найден!" << endl;
-// }
+void n_32(int vn[], int n, int search) {
+     bool flag = true;
+     for (int i = 0; i < n; i++)
+     {
+         if (vn[i] == search)
+         {
+             flag = false;
+             cout << ok << "Элемент найден под индексом: " << i << endl;
+         }
+     }
+     if (flag) cout << warn << "Элемент не найден!" << endl;
+ }
+
+float g(int x) { return (x * x / 1.01); };
+float f(float (*func1)(int), int n) {
+    return func1(n) / n;
+};
+
+float n_33(int n) {
+    float res = 0;
+    for (int i = 1; i <= n; i++) {
+        res = res + f(g, i);   
+    }
+    return res;
+}
+
+float n_34(float (*func)(int), int n) {
+    float res = 0;
+    for (int i = 1; i <= n; i++) {
+        res = res + f(func, i);
+    }
+    return res;
+}
+
 
 int main()
 {
@@ -121,9 +143,15 @@ int main()
     // n_29(x, 5); //30
     // n_29(x, 0.1); //30
 
-    int vn[5]{0, -1, 1, 2, 1};
-    n_31(10, vn, 4);
+    //int vn[5]{0, -1, 1, 2, 1};
+    //n_31(10, vn, 4);
 
     //int vn[4]{1, 3, 2, -1};
     //n_32(vn, 4, 1);
+
+    float y = n_33(2);
+    cout << ok << "33 | " << y << endl;
+    y = n_34(g, 2);
+    cout << ok << "34 | " << y << endl;
+
 }

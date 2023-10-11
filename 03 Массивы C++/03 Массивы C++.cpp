@@ -136,10 +136,83 @@ void n_17() {
     }
 }
 
+int ** n_18(int N, int m) {
+    int** arr = new int* [N];
+    for (int i = 0; i < N; ++i) {
+        arr[i] = new int[m];
+        for (int j = 0; j < m; ++j) {
+            arr[i][j] = (i) * m + (j+1);
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    return arr;
+}
+
+int * n_19(int n, int m) {
+    int** arr = new int* [n];
+    for (int i = 0; i < n; ++i) {
+        arr[i] = new int[m];
+        cout << "Строка #" << i + 1 << " из " << m << " знач. | list of int >> ";
+        for (int j = 0; j < m; ++j) {
+            cin >> arr[i][j];
+        }
+        cout << endl;
+    }
+    int* v = new int [n];
+    cout << "Вектор из " << m << " элементов | list of int >> ";
+    for (int i = 0; i < m; i++)
+    {
+        cin >> v[i];
+    }
+
+    int* v2 = new int[n];
+    cout << endl;
+    for (int i = 0; i < n; i++)
+    {
+        int sn = 0;
+        for (int j = 0; j < m; j++)
+        {
+            sn = sn + arr[i][j] * v[j];
+        }
+        v2[i] = sn;
+        cout << v2[i] << " ";
+    }
+
+    return v2;
+}
+
+void n_20(int n, int m) {
+    int** arr = new int* [n];
+    for (int i = 0; i < n; ++i) {
+        arr[i] = new int[m];
+    }
+    int t = 0;
+    for (int i = 0; i <= n + m; ++i) {
+        for (int j = 0; j <= i; ++j) {
+            if ((j < n) and (i-j < m) and ((int)i % 2 == 0)) {
+                t++;    
+                arr[j][i - j] = t;
+            }
+            else if ((j < m) and (i-j < n) and ((int)i % 2 == 1)) {
+                t++;
+                arr[i - j][j] = t;
+            }
+        }
+    }
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    n_17();
+    //int** a = n_18(3, 7);
+    //int* a = n_19(3, 4);
+    n_20(10, 12);
 }
 
