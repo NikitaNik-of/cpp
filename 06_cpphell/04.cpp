@@ -26,7 +26,7 @@ int main() {
 
 
    printf("%s", cok);
-   printf("\nSum: %i\t | Total: %i", s, k);
+   printf("\nSum: %i\t | Total: %i", s);
    printf("\nSqrt: %f\t", sqrt(s));
    printf("%s", cclear);
    printf("\n\n\n");

@@ -35,7 +35,7 @@ int main() {
    printf("%s", cclear);
    scanf("%i", &n);
 
-   printf("%s", cinfo);\
+   printf("%s", cinfo);
    int s = 0, k = 0;
    for (int i = 0; k < n; i++){
       if(palind(i)){
