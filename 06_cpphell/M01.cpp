@@ -17,7 +17,7 @@ int main(){
     };
 
     for (auto &&i : a) printf("%i ", i);
-    
+    printf("\n\n\n");
 
     int s = 0, flag = 1;
     for (int i = 0; i < n; i++)
@@ -31,7 +31,28 @@ int main(){
             flag = 0;
         }
     }
-    printf("Sum of 2n+1>0 >> %i", s);
+    printf("Sum of 2n+1>0 >> %i\n\n", s);
+    
+
+    int ar[n];
+    int max = a[0];
+    for (auto &&i : a)
+        if (i > max) max = i;
+
+    int maxIR = 0;
+
+    for (int i = n - 1; i >= 0; i--){
+        ar[i] = a[n - i - 1];
+        if (ar[i] > ar[maxIR]) maxIR = i;
+    }
+
+    for (auto &&i : ar) printf("%i ", i);
+    printf("\n\n\n");
+
+    printf("%i\n", ar[maxIR]);
+    printf("%i\n", max);
+    printf("%i", a[n - maxIR - 1]);
+    
     
     
 }
